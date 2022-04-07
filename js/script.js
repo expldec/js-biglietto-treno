@@ -10,13 +10,13 @@ let breakdownExtra = '';
 
 if (passengerAge >= 65) {
     ticketPrice = (grossTicketPrice * (1 - over65Discount)).toFixed(2);
-    breakdownExtra = `<br> Over 65 discount -${over65Discount * 100}% : <strong>-€${(grossTicketPrice * over65Discount).toFixed(2)}</strong><br>
-    Final price: <strong>${ticketPrice}</strong>`;
+    breakdownExtra = `<br> Over 65 discount (-${over65Discount * 100}%): <strong>-€${(grossTicketPrice * over65Discount).toFixed(2)}</strong><br>
+    Final price: <strong>€${ticketPrice}</strong>`;
 } 
 else if (passengerAge < 25){
     ticketPrice = (grossTicketPrice * (1 - under25Discount)).toFixed(2);
-    breakdownExtra = `<br> Under 25 discount -${under25Discount * 100}% : <strong>-€${(grossTicketPrice * under25Discount).toFixed(2)}</strong><br>
-    Final price: <strong>${ticketPrice}</strong>`;
+    breakdownExtra = `<br> Under 25 discount (-${under25Discount * 100}%): <strong>-€${(grossTicketPrice * under25Discount).toFixed(2)}</strong><br>
+    Final price: <strong>€${ticketPrice}</strong>`;
 }
 else {
     ticketPrice = grossTicketPrice.toFixed(2);
