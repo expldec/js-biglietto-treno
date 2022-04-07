@@ -4,7 +4,7 @@
 const passengerKM = prompt("How many kilometers does the passenger need to travel?");
 const passengerAge = prompt("What is the age of the passenger?");
 const ratePerKM = 0.21;
-const under25Discount = 0.20;
+const underageDiscount = 0.20;
 const over65Discount = 0.40;
 
 // calcoliamo il prezzo del biglietto al lordo di eventuali sconti
@@ -24,10 +24,10 @@ if (passengerAge >= 65) {
     breakdownExtra = `<br> Over 65 discount (-${over65Discount * 100}%): <strong>-€${(grossTicketPrice * over65Discount).toFixed(2)}</strong><br>
     Final price: <strong>€${ticketPrice}</strong>`;
 } 
-// come sopra, ma per gli under25
-else if (passengerAge < 25){
-    ticketPrice = (grossTicketPrice * (1 - under25Discount)).toFixed(2);
-    breakdownExtra = `<br> Under 25 discount (-${under25Discount * 100}%): <strong>-€${(grossTicketPrice * under25Discount).toFixed(2)}</strong><br>
+// come sopra, ma per gli under18
+else if (passengerAge < 18){
+    ticketPrice = (grossTicketPrice * (1 - underageDiscount)).toFixed(2);
+    breakdownExtra = `<br> Under 18 discount (-${underageDiscount * 100}%): <strong>-€${(grossTicketPrice * underageDiscount).toFixed(2)}</strong><br>
     Final price: <strong>€${ticketPrice}</strong>`;
 }
 // se il passeggero non ha diritto allo sconto, il prezzo finale è uguale al prezzo lordo.
